@@ -1,3 +1,4 @@
+<?php include("php/check_login.php");?>
 <!DOCTYPE HTML>
 <!--
 	Spatial by TEMPLATED
@@ -27,14 +28,29 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1><strong><a href="index.php">Spatial</a></strong> by Templated</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="login.html">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
-					</ul>
-				</nav>
+				
+				<?php 
+				if ($_SESSION['isLoggedIntoPanoply'] == true){ ?>
+					<h1><strong><a href="index.php">Panoply</a></strong></h1>
+					<nav id="nav">
+						<ul>               
+							<li><a href="index.php">Home</a></li>
+							<li><a href="cookbook.php">Saved Recipes</a></li>
+<!--
+							<li><a href="account.php">My Account</a></li>
+							<li><a href="logout.php">Sign Out</a</li>
+-->
+						</ul>
+					</div>
+				<?php } else { ?>
+					<h1><strong><a href="index.php">Panoply</a></strong></h1>
+					<nav id="nav">
+						<ul>               
+							<li><a href="index.php">Home</a></li>
+							<li><u>Login</u></li>
+						</ul>
+					</div> 
+				<?php } ?>
 			</header>
 
 		<!-- Main -->
@@ -44,7 +60,9 @@
 					<header class="major special">
 						<h2>Login</h2>
 					</header>
-					<loginform action="action_page.php" method="post">
+				</div>
+				<div>
+				<form action="action_page.php" method="post">
 
 					  <div class="container">
 						<label for="uname"><b>Username</b></label>
@@ -54,17 +72,15 @@
 						<input type="password" placeholder="Enter Password" name="psw" required>
 
 						<button type="submit">Login</button>
-						<label>
-						  <input type="checkbox" checked="checked" name="remember"> Remember me
-						</label>
 					  </div>
 
 					  <div class="container" style="background-color:#f1f1f1">
-						<button type="button" class="cancelbtn">Cancel</button>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
 						<span class="psw">Forgot <a href="#">password?</a></span>
-				  </div>
-				</form> 
+				  	  </div>
+					</form> 
 				</div>
+				
 					  
 			</section>
 

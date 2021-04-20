@@ -2,11 +2,6 @@
 @import url(font-awesome.min.css);
 @import "http://fonts.googleapis.com/css?family=Raleway:400,700";
 
-/*
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
 
 /* Basic */
 
@@ -210,7 +205,7 @@
 			font-size: 1.7em;
 			margin-bottom: 0;
 		}
-/*loginform*/
+/*form*/
 	form {
 	  border: 3px solid #f1f1f1;
 	}
@@ -491,9 +486,9 @@
 		}
 
 		.box.alt {
-			border: 0;
-			border-radius: 0;
-			padding: 0;
+			border-radius: 4px;
+			margin-bottom: 2em;
+			padding: 1.5em;
 		}
 
 /* Feature */
@@ -1159,7 +1154,7 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 3em 0 3em 0;
+		padding: 1.5em 0 1em 0;
 	}
 
 		.wrapper.style2 {

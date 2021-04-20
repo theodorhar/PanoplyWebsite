@@ -24,41 +24,39 @@
 		</noscript>
 	</head>
 	<body class="landing">
-
+		
 		<!-- Header -->
-			<header id="header" class="alt">
+		<header id="header" class="alt">
+			<?php 
+			if ($_SESSION['isLoggedIntoPanoply'] == true){ ?>
+				<h1><strong><a href="index.php">Panoply</a></strong></h1>
 				<nav id="nav">
-					<?php 
-					if ($_SESSION['isLoggedIntoPanoply'] == true){ ?>
-						<div id="nav">
-							<ul >               
-								<li><a href="index.php">Home</a></li>
-								<li><a href="elements.html">My Recipes</a></li>
+					<ul>               
+						<li><u>Home</u></li>
+						<li><a href="cookbook.php">Saved Recipes</a></li>
 <!--
-								<li><a href="account.php">My Account</a></li>
-								<li><a href="logout.php">Sign Out</a</li>
+						<li><a href="account.php">My Account</a></li>
+						<li><a href="logout.php">Sign Out</a</li>
 -->
-							</ul>
-						</div>
-					<?php } else { ?>
-						<div id="nav">
-							<ul >               
-								<li><a href="index.php">Home</a></li>
-								<li><a href="login.php">Login</a</li>
-							</ul>
-						</div> 
-					<?php } ?>
-				</nav>
-			</header>
+					</ul>
+				</div>
+			<?php } else { ?>
+				<h1><strong><a href="index.php">Panoply</a></strong></h1>
+				<nav id="nav">
+					
+					<ul>               
+						<li><u>Home</u></li>
+						<li><a href="login.php">Login</a</li>
+					</ul>
+				</div> 
+			<?php } ?>
+		</header>
 
 		<!-- Banner -->
-			<section id="banner">
-				<h2>Test</h2>
-				<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
-				<ul class="actions">
-					<li><a href="#" class="button special big">Get Started</a></li>
-				</ul>
-			</section>
+		<section id="banner">
+			<h2>Panoply</h2>
+			<p>Learn what you want to eat next.</p>
+		</section>
 
 			<!-- One -->
 				<section id="one" class="wrapper style1">
@@ -66,12 +64,12 @@
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
 								<header class="major">
-									<h2>Maecenas luctus lectus</h2>
-									<p>Perspiciatis doloremque recusandae dolor</p>
+									<h2>Our Purpose</h2>
+									<p>Tasty food, but you don't break the budget.</p>
 								</header>
 							</div>
 							<div class="6u$ 12u$(medium)">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ea mollitia corporis id, distinctio sunt veritatis officiis dolore reprehenderit deleniti voluptatibus harum magna, doloremque alias quisquam minus, eaque. Feugiat quod, nesciunt! Iste quos ipsam, iusto sit esse.</p>
+								<p>Everyone has heard of Uber Eats, Grubhub, and all the other food delivery services out there, but </p>
 								<p>Dolorum aspernatur maxime libero ratione quidem distinctio, placeat fugiat laborum voluptatum enim neque soluta vel sunt id ex veritatis. Labore rerum, odit sapiente, alias mollitia magnam exercitationem modi amet earum quia atque ipsum voluptas asperiores quas laboriosam.</p>
 							</div>
 						</div>
@@ -112,8 +110,8 @@
 				<section id="three" class="wrapper style1">
 					<div class="container">
 						<header class="major special">
-							<h2>Mauris vulputate dolor</h2>
-							<p>Feugiat sed lorem ipsum magna</p>
+							<h2>Meet Panoply</h2>
+							<p>What we do and how we do it</p>
 						</header>
 						<div class="feature-grid">
 							<div class="feature">

@@ -15,6 +15,8 @@ if ($mysqli->connect_error) {
 $username = "test";
 $password = "pass";
 if (array_key_exists('username', $_POST) && array_key_exists('password', $_POST)) {
+	
+	echo($_POST['password']);
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$username = stripslashes($username);
