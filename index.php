@@ -1,9 +1,11 @@
+<?php include("php/check_login.php");?>
 <!DOCTYPE HTML>
 <!--
 	Spatial by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+
 <html>
 	<head>
 		<title>Panoply</title>
@@ -26,9 +28,8 @@
 		<!-- Header -->
 			<header id="header" class="alt">
 				<nav id="nav">
-					<?php include("check.php");?>
 					<?php 
-					if ($loginst == 1){ ?>
+					if ($_SESSION['isLoggedIntoPanoply'] == true){ ?>
 						<div id="nav">
 							<ul >               
 								<li><a href="index.php">Home</a></li>
