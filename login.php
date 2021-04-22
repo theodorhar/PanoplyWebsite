@@ -55,14 +55,11 @@
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
-				<div class="container">
-
-					<header class="major special">
+				<header class="major special">
 						<h2>Login</h2>
-					</header>
-				</div>
+				</header>
 				<div>
-				<form action="action_page.php" method="post">
+				<form action="index.php" method="post">
 
 					  <div class="container">
 						<label for="uname"><b>Username</b></label>
@@ -96,7 +93,6 @@
 -->
 					<ul class="copyright">
 						<li>&copy; Theodor Har 2021</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
 					</ul>
 				</div>

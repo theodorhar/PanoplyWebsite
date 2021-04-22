@@ -46,7 +46,7 @@
 					
 					<ul>               
 						<li><u>Home</u></li>
-						<li><a href="login.php">Login</a</li>
+						<li><a href="login.php">Login</a></li>
 					</ul>
 				</div> 
 			<?php } ?>
