@@ -1,13 +1,8 @@
 <?php session_start();?>
 <!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
-		<title>Mealme | Login</title>
+		<title>Mealme | Cookbook</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -29,50 +24,30 @@
 		<!-- Header -->
 			<header id="header">
 				
-				<?php 
+				<?php
 				if (isset($_SESSION['isLoggedIntoPanoply']) && $_SESSION['isLoggedIntoPanoply'] == true){ ?>
 					<h1><strong><a href="index.php">Panoply</a></strong></h1>
 					<nav id="nav">
 						<ul>               
 							<li><a href="index.php">Home</a></li>
-							<li><a href="cookbook.php">Saved Recipes</a></li>
+							<li><u>Saved Recipes</u></li>
 							<li><a href="account.php">My Account</a></li>
-							<li><a href="logout.php">Logout</a></li>
+							<li><a href="logout.php">Sign Out</a></li>
 						</ul>
 					</div>
 				<?php } else { ?>
-					<h1><strong><a href="index.php">Panoply</a></strong></h1>
-					<nav id="nav">
-						<ul>               
-							<li><a href="index.php">Home</a></li>
-							<li><u>Login</u></li>
-						</ul>
-					</div> 
+					 <script type='text/javascript'>
+    					window.location.replace("index.php");
+					</script>
 				<?php } ?>
 			</header>
 		<!-- Main -->
 			<section id="main" class="wrapper style4">
 				<header class = "major special">
-						<h2>Login</h2>
+						<h2>Saved Recipes</h2>
 				</header>
 				<div>
-				<form target = "_blank" action="php/check_login.php" method="post">
-					<div class="logincontainer">
-						<label for="uname"><b>Username</b></label>
-						<br>
-						<input type="text" placeholder="Enter Username" name="uname" required>
-						<br>
-						<label for="psw"><b>Password</b></label>
-						<br>
-						<input type="password" placeholder="Enter Password" name="psw" required>
-						<br>
-						<button onclick="window.location.href = 'cookbook.php';" type="submit">Login</button>
-						<a href="index.php"><button type="button" class="cancelbtn">Cancel</button></a>
-						<input type="checkbox" checked="checked" name="remember"> Remember me
-						<span class="psw"><a href="#">Forgot password?</a></span>
-						
-					</div>
-				</form> 
+				M
 				</div>
 				
 					  

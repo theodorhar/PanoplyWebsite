@@ -1,4 +1,4 @@
-<?php include("php/check_login.php");?>
+<?php session_start();?>
 <!DOCTYPE HTML>
 <!--
 	Spatial by TEMPLATED
@@ -28,15 +28,14 @@
 		<!-- Header -->
 		<header id="header" class="alt">
 			<?php 
-			if ($_SESSION['isLoggedIntoPanoply'] == true){ ?>
+			if (isset($_SESSION['isLoggedIntoPanoply']) && $_SESSION['isLoggedIntoPanoply'] == true){ ?>
 				<h1><strong><a href="index.php">Panoply</a></strong></h1>
 				<nav id="nav">
 					<ul>               
 						<li><u>Home</u></li>
 						<li><a href="cookbook.php">Saved Recipes</a></li>
-<!--
 						<li><a href="account.php">My Account</a></li>
-						<li><a href="logout.php">Sign Out</a</li>
+						<li><a href="logout.php">Sign Out</a></li>
 -->
 					</ul>
 				</div>
