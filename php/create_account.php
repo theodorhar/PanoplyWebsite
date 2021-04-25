@@ -11,13 +11,15 @@ $mysqli = new mysqli($servername, $username, $password,$dbname);
 if ($mysqli->connect_error) {
   die("Connection failed: " . $mysqli->connect_error);
 }
-$username = "_Anonymous";
-$password = "_pass";
 if (array_key_exists('uname', $_POST) && array_key_exists('psw', $_POST)) {
 	
-	$username = $_POST['uname']; //the submitted username
-	$password = $_POST['psw']; //the submitted password
 	
+	$firstname = $_POST['fname'];
+	$lastname = $_POST['lname'];
+	$email =  $_POST['email'];
+	$username = $_POST['uname'];
+	$password = $_POST['psw'];
+	$confirm = $_POST['pswconfirm'];
 	$username = stripslashes($username);
 	$password = stripslashes($password);
 	$username = $mysqli->real_escape_string($username);

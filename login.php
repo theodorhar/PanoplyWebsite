@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Mealme | Login</title>
+		<title>Panoply | Login</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -36,10 +36,10 @@
 						<ul>               
 							<li><a href="index.php">Home</a></li>
 							<li><a href="cookbook.php">Saved Recipes</a></li>
-							<li><a href="account.php">My Account</a></li>
+							<li><a href="account.php">Preferences</a></li>
 							<li><a href="logout.php">Logout</a></li>
 						</ul>
-					</div>
+					</nav>
 				<?php } else { ?>
 					<h1><strong><a href="index.php">Panoply</a></strong></h1>
 					<nav id="nav">
@@ -47,39 +47,38 @@
 							<li><a href="index.php">Home</a></li>
 							<li><u>Login</u></li>
 						</ul>
-					</div> 
+					</nav> 
 				<?php } ?>
 			</header>
 		<!-- Main -->
 			<section id="main" class="wrapper style4">
 				<header class = "major special">
-						<h2>Login</h2>
+						<h2>LOGIN</h2>
 				</header>
-				<div>
-				<form target = "_blank" action="php/check_login.php" method="post">
-					<div class="logincontainer">
-						<label for="uname"><b>Username</b></label>
-						<br>
-						<input type="text" placeholder="Enter Username" name="uname" required>
-						<br>
-						<label for="psw"><b>Password</b></label>
-						<br>
-						<input type="password" placeholder="Enter Password" name="psw" required>
-						<br>
-						<button onclick="window.location.href = 'cookbook.php';" type="submit">Login</button>
-						<a href="index.php"><button type="button" class="cancelbtn">Cancel</button></a>
-						<input type="checkbox" checked="checked" name="remember"> Remember me
-						<span class="psw"><a href="#">Forgot password?</a></span>
-						
-					</div>
-				</form> 
-				</div>
-				
-					  
 			</section>
-
-		<!-- Footer -->
-			<footer id="footer">
+			<form target = "_blank" action="php/check_login.php" method="post">
+				  <label>
+					<p class="label-txt">ENTER YOUR USERNAME</p>
+					<input type="text" class="input" name = "uname">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">ENTER YOUR PASSWORD</p>
+					<input type="password" class="input" name = "psw">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <button onclick="window.location.href = 'cookbook.php';" type="submit">Login</button>
+					<br>
+				  <label>
+					<a style="float: left;" href = "forgotpsw.php">FORGOT YOUR PASSWORD?</a>
+					<span style="float: right;"><a href = "register.php">NEED AN ACCOUNT?</a></span>
+				  </label>
+			</form>
+		<!-- Footer --account	<footer id="footer">
 				<div class="container">
 <!--
 					<ul class="icons">

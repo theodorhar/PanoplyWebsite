@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Mealme | Cookbook</title>
+		<title>Panoply | Register</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -30,28 +30,72 @@
 					<nav id="nav">
 						<ul>               
 							<li><a href="index.php">Home</a></li>
-							<li><u>Saved Recipes</u></li>
+							<li><a href="cookbook.php">Saved Recipes</a></li>
 							<li><a href="account.php">Preferences</a></li>
 							<li><a href="logout.php">Sign Out</a></li>
 						</ul>
 					</nav>
 				<?php } else { ?>
-					 <script type='text/javascript'>
-    					window.location.replace("index.php");
-					</script>
+					<nav id="nav">
+						<ul>               
+							<li><a href="index.php">Home</a></li>
+							<li><a href="login.php">Login</a></li>
+						</ul>
+					</nav>
 				<?php } ?>
 			</header>
 		<!-- Main -->
 			<section id="main" class="wrapper style4">
 				<header class = "major special">
-						<h2>Saved Recipes</h2>
+						<h2>LOGIN</h2>
 				</header>
-				<div>
-				
-				</div>
-				
-					  
 			</section>
+			<form target = "_blank" action="php/create_account.php" method="post">
+				  <label>
+					<p class="label-txt">FIRST NAME</p>
+					<input type="text" class="input" name = "fname">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">LAST NAME</p>
+					<input type="text" class="input" name = "lname">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">EMAIL ADDRESS</p>
+					<input type="text" class="input" name = "email">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">ENTER A USERNAME</p>
+					<input type="text" class="input" name = "uname">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">ENTER A PASSWORD</p>
+					<input type="password" class="input" name = "psw">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <label>
+					<p class="label-txt">CONFIRM PASSWORD</p>
+					<input type="password" class="input" name = "pswconfirm">
+					<div class="line-box">
+					  <div class="line"></div>
+					</div>
+				  </label>
+				  <button onclick="window.location.href = 'preferences.php';" type="submit">Create Account</button>
+					<br>
+			</form>
 
 		<!-- Footer -->
 			<footer id="footer">

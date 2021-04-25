@@ -34,11 +34,10 @@
 					<ul>               
 						<li><u>Home</u></li>
 						<li><a href="cookbook.php">Saved Recipes</a></li>
-						<li><a href="account.php">My Account</a></li>
+						<li><a href="account.php">Preferences</a></li>
 						<li><a href="logout.php">Sign Out</a></li>
--->
 					</ul>
-				</div>
+				</nav>
 			<?php } else { ?>
 				<h1><strong><a href="index.php">Panoply</a></strong></h1>
 				<nav id="nav">
@@ -47,7 +46,7 @@
 						<li><u>Home</u></li>
 						<li><a href="login.php">Login</a></li>
 					</ul>
-				</div> 
+				</nav> 
 			<?php } ?>
 		</header>
 

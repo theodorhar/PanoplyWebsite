@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Mealme | Cookbook</title>
+		<title>Panoply | Register</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -29,16 +29,17 @@
 						<ul>               
 							<li><a href="index.php">Home</a></li>
 							<li><a href="cookbook.php">Saved Recipes</a></li>
-							<li><u>My Account</u></li>
+							<li><u>Preferences</u></li>
 							<li><a href="logout.php">Sign Out</a></li>
 						</ul>
-					</div>
+					</nav>
 				<?php } else { ?>
 					 <script type='text/javascript'>
     					window.location.replace("index.php");
 					</script>
 				<?php } ?>
 			</header>
+<!--	TODO: add delete account-->
 <body>
 </body>
 </html>
