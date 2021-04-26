@@ -1,4 +1,5 @@
 <?php session_start();?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -13,6 +14,7 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -47,55 +49,78 @@
 		<!-- Main -->
 			<section id="main" class="wrapper style4">
 				<header class = "major special">
-						<h2>LOGIN</h2>
+						<h2>REGISTER</h2>
 				</header>
 			</section>
-			<form target = "_blank" action="php/create_account.php" method="post">
-				  <label>
-					<p class="label-txt">FIRST NAME</p>
-					<input type="text" class="input" name = "fname" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <label>
-					<p class="label-txt">LAST NAME</p>
-					<input type="text" class="input" name = "lname" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <label>
-					<p class="label-txt">EMAIL ADDRESS</p>
-					<input type="text" class="input" name = "email" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <label>
-					<p class="label-txt">ENTER A USERNAME</p>
-					<input type="text" class="input" name = "uname" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <label>
-					<p class="label-txt">ENTER A PASSWORD</p>
-					<input type="password" class="input" name = "psw" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <label>
-					<p class="label-txt">CONFIRM PASSWORD</p>
-					<input type="password" class="input" name = "pswconfirm" required>
-					<div class="line-box">
-					  <div class="line"></div>
-					</div>
-				  </label>
-				  <button onclick="window.location.href = 'account.php';" type="submit">Create Account</button>
-					<br>
-			</form>
+			<section>
+				<form target = "_blank" action="php/create_account.php" method="post">
+					  <label>
+						<p class="label-txt">FIRST NAME</p>
+						<input type="text" class="input" name = "fname" required>
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label>
+						<p class="label-txt">LAST NAME</p>
+						<input type="text" class="input" name = "lname" required>
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label>
+						<p class="label-txt">EMAIL ADDRESS</p>
+						<input type="email" class="input" name = "email" required>
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label>
+						<p class="label-txt">ENTER A USERNAME</p>
+						<input type="text" class="input" name = "uname" required minlength = "8">
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label>
+						<p class="label-txt">ENTER A PASSWORD</p>
+						<input type="password" class="input" id = "psw" name = "psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" oninput="check(this)" required>
+						  <script src="/js/pass_formatcheck.js"></script>
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label class = formatmessage id = "psw_message">
+						  <p class="label-txt">Password must contain the following:</p> <br>
+						  <span id="letter" class="invalid">- A lowercase letter &nbsp;&nbsp;</span>
+						  <span id="capital" class="invalid">- A capital (uppercase) letter&nbsp;&nbsp;</span>
+						  <span id="number" class="invalid">- A number&nbsp;&nbsp;</span> <br>
+						  <span id="length" class="invalid">- Minimum 12 characters</span>
+					  </label>
+					  <label>
+						<p class="label-txt">CONFIRM PASSWORD</p>
+						<input type="password" class="input" oninput="check(this)" name = "pswconfirm" required>
+						<script src = "/js/passconfirm_formatcheck.js"></script>
+						<script> 
+							function check(input) {
+								if (document.getElementById('pswconfirm').value != document.getElementById('psw').value) {
+									input.setCustomValidity('Passwords Must be Matching.');
+								} else {
+									input.setCustomValidity('');
+								}
+							}
+						  </script>
+						<div class="line-box">
+						  <div class="line"></div>
+						</div>
+					  </label>
+					  <label class = formatmessage id = "pswmatch_message">
+							<span id="pswmatch" class="invalid">- Passwords must match</span>
+					  </label>
+					  <button type="submit">Create Account</button>
+					  <br>
+				</form>
+			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
