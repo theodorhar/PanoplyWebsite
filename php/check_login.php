@@ -16,15 +16,11 @@ $password = "_pass";
 if (array_key_exists('uname', $_POST) && array_key_exists('psw', $_POST)) {
 	
 	$username = $_POST['uname']; //the submitted username
-	$password = $_POST['psw']; //the submitted password
-	
 	$username = stripslashes($username);
-	$password = stripslashes($password);
 	$username = $mysqli->real_escape_string($username);
-	$password = $mysqli->real_escape_string($password);
 }
-$result = $mysqli->query("SELECT * FROM users WHERE username='$username' and password='$password' ");
-if($result && $result->num_rows == 1){
+$result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
+if($result && $result->num_rows == 1 && password_verify($_POST['psw'],$result->fetch_assoc()["password"])){
 	$_SESSION['isLoggedIntoPanoply'] = true;
 	$_SESSION['username'] = $username;
 }else{

@@ -53,47 +53,47 @@
 			<form target = "_blank" action="php/create_account.php" method="post">
 				  <label>
 					<p class="label-txt">FIRST NAME</p>
-					<input type="text" class="input" name = "fname">
+					<input type="text" class="input" name = "fname" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
 				  <label>
 					<p class="label-txt">LAST NAME</p>
-					<input type="text" class="input" name = "lname">
+					<input type="text" class="input" name = "lname" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
 				  <label>
 					<p class="label-txt">EMAIL ADDRESS</p>
-					<input type="text" class="input" name = "email">
+					<input type="text" class="input" name = "email" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
 				  <label>
 					<p class="label-txt">ENTER A USERNAME</p>
-					<input type="text" class="input" name = "uname">
+					<input type="text" class="input" name = "uname" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
 				  <label>
 					<p class="label-txt">ENTER A PASSWORD</p>
-					<input type="password" class="input" name = "psw">
+					<input type="password" class="input" name = "psw" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
 				  <label>
 					<p class="label-txt">CONFIRM PASSWORD</p>
-					<input type="password" class="input" name = "pswconfirm">
+					<input type="password" class="input" name = "pswconfirm" required>
 					<div class="line-box">
 					  <div class="line"></div>
 					</div>
 				  </label>
-				  <button onclick="window.location.href = 'preferences.php';" type="submit">Create Account</button>
+				  <button onclick="window.location.href = 'account.php';" type="submit">Create Account</button>
 					<br>
 			</form>
 
