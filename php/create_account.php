@@ -26,21 +26,20 @@ function sqlescape($string,$conn){
 	$username = sqlescape($_POST['uname'],$mysqli);
 	$password = password_hash(sqlescape($_POST['psw'],$mysqli),PASSWORD_DEFAULT);
 	$confirm = sqlescape($_POST['pswconfirm'],$mysqli);
-	$result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
-if($result && $result->num_rows == 1){
-	$_SESSION['isLoggedIntoPanoply'] = false;
-}elseif($_SESSION['invalidcreate'] == false){
-	$stmt = $mysqli->prepare("INSERT INTO users (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
-	$stmt->bind_param("sssss",$firstname, $lastname, $email, $username,$password);
-	if ($stmt->execute() === TRUE) {
-	  echo "New User created successfully";
-		$_SESSION['isLoggedIntoPanoply'] = true;
-		$_SESSION['username'] = $username;
-	} else {
-	  echo "Error: " . $sql . "<br>" . $mysqli->error;
+	if($_SESSION['invalidcreate'] == false){
+		$stmt = $mysqli->prepare("INSERT INTO users (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss",$firstname, $lastname, $email, $username,$password);
+		if ($stmt->execute() === TRUE) {
+			$_SESSION['isLoggedIntoPanoply'] = true;
+			$_SESSION['username'] = $username;
+		} else {
+		  $_SESSION['invalidcreate'] = true;
+		  $_SESSION['isLoggedIntoPanoply'] = false;
+		}
+	}else{
+		$_SESSION['invalidcreate'] = true;
+		$_SESSION['isLoggedIntoPanoply'] = false;
 	}
-	
-}
 echo(var_dump($_SESSION));
 echo "<script>window.close();</script>";
 

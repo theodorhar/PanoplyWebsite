@@ -53,7 +53,7 @@
 				</header>
 			</section>
 			<section>
-				<form target = "_blank" action="php/create_account.php" method="post">
+				<form id = "registerform" target = "_blank" action="php/create_account.php" method="post">
 					  <label>
 						<p class="label-txt">FIRST NAME</p>
 						<input type="text" class="input" name = "fname" required>
@@ -99,14 +99,14 @@
 					  </label>
 					  <label>
 						<p class="label-txt">CONFIRM PASSWORD</p>
-						<input type="password" class="input" oninput="check(this)" name = "pswconfirm" required>
-						<script src = "/js/passconfirm_formatcheck.js"></script>
+						<input type="password" class="input" oninput="check(this)" id = "pswconfirm" name = "pswconfirm" required>
 						<script> 
 							function check(input) {
 								if (document.getElementById('pswconfirm').value != document.getElementById('psw').value) {
 									input.setCustomValidity('Passwords Must be Matching.');
 								} else {
-									input.setCustomValidity('');
+									document.getElementById('pswconfirm').setCustomValidity('');
+									document.getElementById('psw').setCustomValidity('');
 								}
 							}
 						  </script>
@@ -117,7 +117,8 @@
 					  <label class = formatmessage id = "pswmatch_message">
 							<span id="pswmatch" class="invalid">- Passwords must match</span>
 					  </label>
-					  <button type="submit">Create Account</button>
+					  <br>
+					  <button type="submit"> Create Account</button>
 					  <br>
 				</form>
 			</section>
