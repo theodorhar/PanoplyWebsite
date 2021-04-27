@@ -257,6 +257,9 @@
 	  border: none;
 	  outline: none;
 	}
+	.invisible{
+	  display:none;
+	}
 	.label-txt {
 	  top: -1.6em;
 	  padding: 10px;

@@ -53,7 +53,26 @@
 				</header>
 			</section>
 			<section>
-				<form id = "registerform" target = "_blank" action="php/create_account.php" method="post">
+				<form id = "registerform" target = "_blank" action="php/create_account.php" onsubmit="setTimeout(function(){window.location.reload();},2000);" method="post">
+					  <label <?php
+						if (isset($_SESSION['usernametaken']) && $_SESSION['usernametaken'] == true){ ?>
+							style = "color:darkred;font-size:20px"
+						<?php } else { ?>
+							class = "invisible"
+						<?php } ?>
+						   >Username already taken- please try again.
+					  </label>
+					  <label <?php
+						if (isset($_SESSION['isLoggedIntoPanoply']) && $_SESSION['isLoggedIntoPanoply'] == true){ ?>
+							style = "color:darkgreen;font-size:20px"
+						<?php } else { ?>
+							class = "invisible"
+						<?php } ?>
+						   >Redirecting to Account Settings...
+					  </label>
+					    <?php if (isset($_SESSION['isLoggedIntoPanoply']) && $_SESSION['isLoggedIntoPanoply'] == true){ ?>
+							<script>window.location="account.php";</script>
+						<?php } ?>
 					  <label>
 						<p class="label-txt">FIRST NAME</p>
 						<input type="text" class="input" name = "fname" required>
@@ -120,6 +139,7 @@
 					  <br>
 					  <button type="submit"> Create Account</button>
 					  <br>
+					  
 				</form>
 			</section>
 
