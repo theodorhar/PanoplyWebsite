@@ -1,0 +1,21 @@
+{
+  "title": "Panoply",
+  "titleTemplate": "%s",
+  "description": "Panoply - A recipe recommender",
+  "openGraph": {
+    "title": "Panoply",
+    "description": "Panoply - A recipe recommender",
+    "type": "website",
+    "locale": "en_us",
+    "url": "",
+    "site_name": "Panoply",
+    "images": [
+      {
+        "url": "/banner.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "Banner"
+      }
+    ]
+  }
+}
