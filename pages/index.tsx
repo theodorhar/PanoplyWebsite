@@ -5,31 +5,34 @@ import { Grid, Marquee, Hero } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
-// export async function getStaticProps({
-//   preview,
-//   locale,
-//   locales,
-// }: GetStaticPropsContext) {
-//   const config = { locale, locales }
-//   const { recipes } = await recipeAPI.getAllRecipes({
-//     variables: { first: 12 },
-//     config,
-//     preview,
-//   })
-//   // const { categories, brands } = await commerce.getSiteInfo({ config, preview })
-//   // const { pages } = await commerce.getAllPages({ config, preview })
+export async function getStaticProps() {
+  const res = await fetch(process.env.REACT_APP_API_URL)
+  const recipes = await res.json()
 
-//   return {
-//     props: {
-//       recipes
-//     },
-//     revalidate: 14400,
-//   }
-// }
-export default function Home() {
-  return <div>Test</div>
+  // if (!recipes) {
+  //   return {
+  //     notFound: true,
+  //   }
+  // }
+
+  return {
+    props: {
+      recipes,
+    },
+  }
 }
-// export default function Home({recipes
+
+export default function Home({ recipes }) {
+  return (
+    <ul>
+      {Array.from(recipes).map((recipe) => (
+        <li>{recipe.title}</li>
+      ))}
+    </ul>
+  )
+}
+
+// export default function Home({data
 //   ,
 // }: InferGetStaticPropsType<typeof getStaticProps>) {
 //   return (
