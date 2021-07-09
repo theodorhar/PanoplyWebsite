@@ -7,6 +7,7 @@ import * as Page from './page'
 import * as Product from './product'
 import * as Signup from './signup'
 import * as Site from './site'
+import * as Recipe from './recipe'
 
 export type {
   Checkout,
@@ -18,4 +19,5 @@ export type {
   Product,
   Signup,
   Site,
+  Recipe,
 }
