@@ -63,6 +63,7 @@
 }
 .root .caption {
   position: absolute;
+  width: 100%;
   top: 50%;
   z-index: 1;
   padding: 0 20px;

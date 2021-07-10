@@ -29,6 +29,7 @@ const RecipeCard: FC<Props> = ({
           <div className="root">
             <figure className={s.thumb}>
               <div className={s.imageContainer}>
+                <div className={s.squareBg} />
                 <Image
                   alt={recipe.title || 'Recipe Image'}
                   className={s.recipeImage}
