@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Link from 'next/link'
 import type { Product } from '@commerce/types/product'
 import { Grid } from '@components/ui'
-import { ProductCard } from '@components/product'
+import { RecipeCard } from '@components/product'
 import s from './HomeAllProductsGrid.module.css'
 import { getCategoryPath, getDesignerPath } from '@lib/search'
 
@@ -54,7 +54,7 @@ const HomeAllProductsGrid: FC<Props> = ({
       <div className="flex-1">
         <Grid layout="normal">
           {products.map((product) => (
-            <ProductCard
+            <RecipeCard
               key={product.path}
               product={product}
               variant="simple"

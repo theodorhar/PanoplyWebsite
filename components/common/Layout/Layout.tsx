@@ -7,7 +7,7 @@ import type { Category } from '@commerce/types/site'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
 import { useUI } from '@components/ui/context'
 import { Navbar, Footer } from '@components/common'
-import { Button, Modal, LoadingDots } from '@components/ui'
+import { Sidebar, Button, Modal, LoadingDots } from '@components/ui'
 import s from './Layout.module.css'
 
 const Loading = () => (
@@ -57,7 +57,6 @@ const Layout: FC<Props> = ({
         {modalView === 'SIGNUP_VIEW' && <SignUpView />}
         {modalView === 'FORGOT_VIEW' && <ForgotPassword />}
       </Modal> */}
-
       <FeatureBar
         title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
         hide={acceptedCookies}

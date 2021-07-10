@@ -2,7 +2,7 @@ import { FC } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import type { Recipe } from '@commerce/types/recipe'
-import s from './ProductCard.module.css'
+import s from './dist/RecipeCard.module.css'
 import Image, { ImageProps } from 'next/image'
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 const placeholderImg = '/product-img-placeholder.svg'
 
-const ProductCard: FC<Props> = ({
+const RecipeCard: FC<Props> = ({
   className,
   recipe,
   variant,
@@ -25,21 +25,32 @@ const ProductCard: FC<Props> = ({
   <Link href={recipe.url} {...props}>
     <a className={cn(s.root, { [s.simple]: variant === 'simple' }, className)}>
       {variant === 'slim' ? (
-        <div className="relative overflow-hidden box-border">
-          <div className="absolute inset-0 flex items-center justify-end mr-8 z-20">
-            <span className="bg-black text-white inline-block p-3 font-bold text-xl break-words">
-              {recipe.title}
-            </span>
+        <div>
+          <div className="root">
+            <figure className={s.thumb}>
+              <div className={s.imageContainer}>
+                <Image
+                  alt={recipe.title || 'Recipe Image'}
+                  className={s.recipeImage}
+                  src={recipe.photo_url || placeholderImg}
+                  height={540}
+                  width={540}
+                  quality="85"
+                  layout="responsive"
+                  {...imgProps}
+                />
+              </div>
+              <figcaption className={s.caption}>
+                <h2 className={s.title}>{recipe.title}</h2>
+                <p className={s.snippet}>
+                  {recipe.rating_stars} ({recipe.review_count})
+                </p>
+                <a href="" className={s.button}>
+                  View Original
+                </a>
+              </figcaption>
+            </figure>
           </div>
-          <Image
-            quality="85"
-            src={recipe.photo_url || placeholderImg}
-            alt={recipe.title || 'Product Image'}
-            height={320}
-            width={320}
-            layout="fixed"
-            {...imgProps}
-          />
         </div>
       ) : (
         <>
@@ -73,4 +84,4 @@ const ProductCard: FC<Props> = ({
   </Link>
 )
 
-export default ProductCard
+export default RecipeCard

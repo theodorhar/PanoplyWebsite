@@ -1,6 +1,6 @@
 // import {recipeAPI} from '../lib/api/recipeAPI'
 import { Layout } from '@components/common'
-import { ProductCard } from '@components/product'
+import { RecipeCard } from '@components/product'
 import { Grid, Marquee, Hero } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
@@ -27,7 +27,7 @@ export default function Home({ recipes }) {
     <>
       <Grid layout="normal">
         {recipes.map((recipe) => (
-          <ProductCard key={recipe.id} recipe={recipe} variant="simple" />
+          <RecipeCard key={recipe.id} recipe={recipe} variant="slim" />
         ))}
       </Grid>
     </>

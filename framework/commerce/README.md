@@ -181,7 +181,7 @@ const SearchPage = ({ searchString, category, brand, sortStr }) => {
   return (
     <Grid layout="normal">
       {data.products.map((product) => (
-        <ProductCard key={product.path} product={product} />
+        <RecipeCard key={product.path} product={product} />
       ))}
     </Grid>
   )

@@ -1,0 +1,249 @@
+$desktop: 1024px;
+@import "https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300&display=swap";
+@mixin breakpoint($point) {
+	@if $point == desktop {
+	  @media (min-width: $desktop) {
+		@content;
+		  }
+	  }
+  }
+
+.root {
+	width: 300px;
+	margin: 20px;
+	background-color: white;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+	&:hover {
+		
+  	  & .thumb {
+		&::after {
+			top: 0;
+		}
+	  }
+
+	  & .snippet {
+		margin: 20px 0;
+	  }
+	  & .recipeImage {
+		transform: translateY(-10px);
+	  }
+  
+	  & .recipeTitle > span,
+	  & .caption {
+		top: 50%;
+		transform: translateY(-50%);
+	  }
+	  & .recipePrice,
+	  
+
+	  & .wishlistButton {
+		@apply bg-secondary text-secondary;
+	  }
+  
+	  &:nth-child(6n + 1) .recipeTitle > span,
+	  &:nth-child(6n + 1) .recipePrice,
+	  &:nth-child(6n + 1) .wishlistButton {
+		@apply bg-violet text-white;
+	  }
+  
+	  &:nth-child(6n + 5) .recipeTitle > span,
+	  &:nth-child(6n + 5) .recipePrice,
+	  &:nth-child(6n + 5) .wishlistButton {
+		@apply bg-blue text-white;
+	  }
+  
+	  &:nth-child(6n + 3) .recipeTitle > span,
+	  &:nth-child(6n + 3) .recipePrice,
+	  &:nth-child(6n + 3) .wishlistButton {
+		@apply bg-pink text-white;
+	  }
+  
+	  &:nth-child(6n + 6) .recipeTitle > span,
+	  &:nth-child(6n + 6) .recipePrice,
+	  &:nth-child(6n + 6) .wishlistButton {
+		@apply bg-cyan text-white;
+	  }
+	}
+	  & .thumb {
+		position: relative;
+		max-height: 400px;
+		overflow: hidden;
+		
+		@include breakpoint(desktop) {
+			max-height: 500px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgba(0, 0, 0, .5) 40%, rgba(255, 255 ,255 , 0) 100%);
+			transition: .3s;
+			
+			@include breakpoint(desktop) {
+				top: calc(100% - 140px);
+			}
+		}
+	  }
+		
+	  & .image {
+		transition: .5s ease-in-out;
+	  }
+		
+	  & .caption {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		padding: 0 20px;
+		color: white;
+		transform: translateY(-50%);
+		text-align: center;
+		transition: .3s;
+
+		@include breakpoint(desktop) {
+			top: calc(100% - 110px);
+			transform: unset;
+		}
+	  }
+
+	  & .title {
+		display: -webkit-box;
+		max-height: 85px;
+		overflow: hidden;
+		font-family: 'Playfair Display', serif;
+		font-size: 23px;
+		line-height: 28px;
+		text-shadow: 0px 1px 5px black;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	  }
+
+	  & .snippet {
+		display: -webkit-box;
+		max-height: 150px;
+		margin: 20px 0;
+		overflow: hidden;
+		font-family: 'Roboto', sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+		text-overflow: ellipsis;
+		transition: .5s ease-in-out;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		
+		@include breakpoint(desktop) {
+			margin: 60px 0;
+		}
+	  }
+
+	  & .button {
+		display: inline-block;
+		padding: 10px 20px;
+		color: white;
+		border: 1px solid white;
+		font-family: 'Roboto', sans-serif;
+		font-size: 12px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: .3s;
+
+		&:hover {
+			color: black;
+			background-color: white;
+		}
+	  }
+	&:nth-child(6n + 1) .squareBg {
+	  @apply bg-violet;
+	}
+  
+	&:nth-child(6n + 5) .squareBg {
+	  @apply bg-blue;
+	}
+  
+	&:nth-child(6n + 3) .squareBg {
+	  @apply bg-pink;
+	}
+  
+	&:nth-child(6n + 6) .squareBg {
+	  @apply bg-cyan;
+	}
+  }
+  
+  .squareBg,
+  .recipeTitle > span,
+  .recipePrice,
+  .wishlistButton {
+	@apply transition-colors ease-in-out duration-500;
+  }
+  
+  .squareBg {
+	@apply transition-colors absolute inset-0 z-0;
+	background-color: #212529;
+  }
+  
+  .squareBg:before {
+	@apply transition ease-in-out duration-500 bg-repeat-space w-full h-full block;
+	background-image: url('/bg-recipes.svg');
+	content: '';
+  }
+  
+  .simple {
+	& .squareBg {
+	  @apply bg-accents-0;
+	  background-image: url('/bg-recipes.svg');
+	}
+  
+	& .recipeTitle {
+	  @apply pt-2;
+	  font-size: 1rem;
+  
+	  & span {
+		@apply leading-extra-loose;
+	  }
+	}
+  
+	& .recipePrice {
+	  @apply text-sm;
+	}
+  }
+  
+  .recipeTitle {
+	@apply pt-0 max-w-full w-full leading-extra-loose;
+	font-size: 2rem;
+	letter-spacing: 0.4px;
+  
+	& span {
+	  @apply py-4 px-6 bg-primary text-primary font-bold;
+	  font-size: inherit;
+	  letter-spacing: inherit;
+	  box-decoration-break: clone;
+	  -webkit-box-decoration-break: clone;
+	}
+  }
+  
+  .recipePrice {
+	@apply py-4 px-6 bg-primary text-primary font-semibold inline-block text-sm leading-6;
+	letter-spacing: 0.4px;
+  }
+  
+  .wishlistButton {
+	@apply w-10 h-10 flex ml-auto items-center justify-center bg-primary text-primary font-semibold  text-xs leading-6 cursor-pointer;
+  }
+  
+  .imageContainer {
+	@apply flex items-center justify-center;
+	overflow: hidden;
+  
+	& > div {
+	  min-width: 100%;
+	}
+  }
+  
+  .recipeImage {
+	@apply object-cover scale-120;
+	transition: .5s ease-in-out;
+  }
