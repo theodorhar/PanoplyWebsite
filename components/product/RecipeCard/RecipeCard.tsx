@@ -47,7 +47,7 @@ const RecipeCard: FC<Props> = ({
                   {recipe.rating_stars} ({recipe.review_count})
                 </p>
                 <a href="" className={s.button}>
-                  View Original
+                  View Original Recipe
                 </a>
               </figcaption>
             </figure>

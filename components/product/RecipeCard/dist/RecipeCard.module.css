@@ -123,17 +123,17 @@
   color: black;
   background-color: white;
 }
-.root:nth-child(6n+1) .squareBg {
-  @apply bg-violet;
+.root:nth-child(5n+1) .squareBg {
+  background-color: orangered;
 }
-.root:nth-child(6n+5) .squareBg {
-  @apply bg-blue;
+.root:nth-child(5n+2) .squareBg {
+  background-color: maroon;
 }
-.root:nth-child(6n+3) .squareBg {
-  @apply bg-pink;
+.root:nth-child(5n+3) .squareBg {
+  background-color: peru;
 }
-.root:nth-child(6n+6) .squareBg {
-  @apply bg-cyan;
+.root:nth-child(5n+4) .squareBg {
+  background-color: yellow;
 }
 
 .squareBg,

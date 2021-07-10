@@ -25,7 +25,7 @@ export async function getStaticProps() {
 export default function Home({ recipes }) {
   return (
     <>
-      <Grid layout="normal">
+      <Grid layout="default">
         {recipes.map((recipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} variant="slim" />
         ))}
