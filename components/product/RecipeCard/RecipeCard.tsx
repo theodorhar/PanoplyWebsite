@@ -43,10 +43,23 @@ const RecipeCard: FC<Props> = ({
               </div>
               <figcaption className={s.caption}>
                 <h2 className={s.title}>{recipe.title}</h2>
-                <p className={s.snippet}>
-                  {recipe.rating_stars} ({recipe.review_count})
-                </p>
-                <a href="" className={s.button}>
+                {recipe.cook_time_minutes != '0' ? (
+                  <p className={s.snippet}>
+                    Rating: {recipe.rating_stars}
+                    <br></br>
+                    Rating Count: {recipe.review_count}
+                    <br></br>
+                    Cook Time: {recipe.cook_time_minutes} mins
+                  </p>
+                ) : (
+                  <p className={s.snippet}>
+                    Rating: {recipe.rating_stars}
+                    <br></br>
+                    Rating Count: {recipe.review_count}
+                  </p>
+                )}
+
+                <a href={recipe.url} className={s.button}>
                   View Original Recipe
                 </a>
               </figcaption>
