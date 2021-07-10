@@ -14,23 +14,23 @@
 .root:hover .recipeImage {
   transform: translateY(-10px);
 }
-.root:hover .recipeTitle > span, .root:hover .caption {
+.root:hover .title > span, .root:hover .caption {
   top: 50%;
   transform: translateY(-50%);
 }
 .root:hover .recipePrice, .root:hover .wishlistButton {
   @apply bg-secondary text-secondary;
 }
-.root:hover:nth-child(6n+1) .recipeTitle > span, .root:hover:nth-child(6n+1) .recipePrice, .root:hover:nth-child(6n+1) .wishlistButton {
+.root:hover:nth-child(6n+1) .title > span, .root:hover:nth-child(6n+1) .recipePrice, .root:hover:nth-child(6n+1) .wishlistButton {
   @apply bg-violet text-white;
 }
-.root:hover:nth-child(6n+5) .recipeTitle > span, .root:hover:nth-child(6n+5) .recipePrice, .root:hover:nth-child(6n+5) .wishlistButton {
+.root:hover:nth-child(6n+5) .title > span, .root:hover:nth-child(6n+5) .recipePrice, .root:hover:nth-child(6n+5) .wishlistButton {
   @apply bg-blue text-white;
 }
-.root:hover:nth-child(6n+3) .recipeTitle > span, .root:hover:nth-child(6n+3) .recipePrice, .root:hover:nth-child(6n+3) .wishlistButton {
+.root:hover:nth-child(6n+3) .title > span, .root:hover:nth-child(6n+3) .recipePrice, .root:hover:nth-child(6n+3) .wishlistButton {
   @apply bg-pink text-white;
 }
-.root:hover:nth-child(6n+6) .recipeTitle > span, .root:hover:nth-child(6n+6) .recipePrice, .root:hover:nth-child(6n+6) .wishlistButton {
+.root:hover:nth-child(6n+6) .title > span, .root:hover:nth-child(6n+6) .recipePrice, .root:hover:nth-child(6n+6) .wishlistButton {
   @apply bg-cyan text-white;
 }
 .root .thumb {
@@ -80,6 +80,7 @@
 }
 .root .title {
   display: -webkit-box;
+  height: 5rem;
   max-height: 85px;
   overflow: hidden;
   font-family: "Playfair Display", serif;
@@ -137,7 +138,7 @@
 }
 
 .squareBg,
-.recipeTitle > span,
+.title > span,
 .recipePrice,
 .wishlistButton {
   @apply transition-colors ease-in-out duration-500;
@@ -158,23 +159,23 @@
   @apply bg-accents-0;
   background-image: url("/bg-recipes.svg");
 }
-.simple .recipeTitle {
+.simple .title {
   @apply pt-2;
   font-size: 1rem;
 }
-.simple .recipeTitle span {
+.simple .title span {
   @apply leading-extra-loose;
 }
 .simple .recipePrice {
   @apply text-sm;
 }
 
-.recipeTitle {
+.title {
   @apply pt-0 max-w-full w-full leading-extra-loose;
   font-size: 2rem;
   letter-spacing: 0.4px;
 }
-.recipeTitle span {
+.title span {
   @apply py-4 px-6 bg-primary text-primary font-bold;
   font-size: inherit;
   letter-spacing: inherit;
