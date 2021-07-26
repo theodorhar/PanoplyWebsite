@@ -6,7 +6,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
 export async function getStaticProps() {
-  const res = await fetch(process.env.REACT_APP_API_URL)
+  const res = await fetch(process.env.REACT_APP_API_URL + '/default')
   const recipes = await res.json()
 
   if (!recipes) {
