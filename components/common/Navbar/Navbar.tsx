@@ -24,8 +24,8 @@ const Navbar: FC<NavbarProps> = ({ links }) => (
             </a>
           </Link>
           <nav className="hidden ml-6 space-x-4 lg:block">
-            <Link href="/search">
-              <a className={s.link}>All</a>
+            <Link href="/">
+              <a className={s.link}>Home</a>
             </Link>
             {links?.map((l) => (
               <Link href={l.href} key={l.href}>
