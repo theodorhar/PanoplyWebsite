@@ -43,7 +43,7 @@ const Searchbar: FC<Props> = ({ className, id = 'search' }) => {
                   query: q ? { q } : {},
                 },
                 undefined,
-                { shallow: true }
+                { shallow: false } //does this not reload page
               )
             }
           }}
