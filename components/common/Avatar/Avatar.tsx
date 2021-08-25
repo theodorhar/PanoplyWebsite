@@ -19,11 +19,13 @@ const Avatar: FC<Props> = ({}) => {
       style={{ backgroundImage: userAvatar }}
       className="inline-block h-8 w-8 rounded-full border-2 border-primary hover:border-secondary focus:border-secondary transition linear-out duration-150"
     >
-      <img
-        alt="Profile Picture"
-        src={user.picture}
-        style={{ borderRadius: 50 }}
-      />
+      {user ? (
+        <img
+          alt="Profile Picture"
+          src={user.picture}
+          style={{ borderRadius: 50 }}
+        />
+      ) : null}
     </div>
   )
 }
