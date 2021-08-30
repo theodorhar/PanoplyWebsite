@@ -12,13 +12,13 @@ const Noop: FC = ({ children }) => <>{children}</>
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as any).Layout || Noop
-
+  const { user } = pageProps
   useEffect(() => {
     document.body.classList?.remove('loading')
   }, [])
 
   return (
-    <UserProvider>
+    <UserProvider user={user}>
       <Head />
       <ManagedUIContext>
         <Layout pageProps={pageProps}>

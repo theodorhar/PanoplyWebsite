@@ -5,7 +5,7 @@ import { Container, Text } from '@components/ui'
 export default function Profile({ user }) {
   return (
     <Container>
-      <Text variant="pageHeading">My Profile</Text>
+      <Text variant="pageHeading">Recommendations</Text>
       {user && (
         <div className="grid lg:grid-cols-12">
           <div className="lg:col-span-8 pr-4">
